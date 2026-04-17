@@ -1,0 +1,8 @@
+generative_agents-main/
+*.pdf
+*.zip
+unpacked/
+edit_doc.py
+__pycache__/
+*.pyc
+.DS_Store
