@@ -1,0 +1,268 @@
+[gd_scene load_steps=5 format=3 uid="uid://main"]
+
+[ext_resource type="Script" path="res://scripts/Main.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/BackendClient.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/MiraclePanel.gd" id="3"]
+[ext_resource type="Script" path="res://scripts/ResearchPanel.gd" id="4"]
+[ext_resource type="Script" path="res://scripts/VillageBackground.gd" id="5"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1")
+
+[node name="BackendClient" type="Node" parent="."]
+script = ExtResource("2")
+
+[node name="VillageRoot" type="Node2D" parent="."]
+position = Vector2(80, 50)
+
+[node name="VillageBackground" type="Node2D" parent="VillageRoot"]
+script = ExtResource("5")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="FlashOverlay" type="ColorRect" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(1, 0.95, 0.6, 0)
+mouse_filter = 2
+visible = false
+
+[node name="FaithLabel" type="Label" parent="UI"]
+offset_left = 10.0
+offset_top = 4.0
+offset_right = 200.0
+offset_bottom = 28.0
+text = "✝ Faith: 30"
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(1, 0.9, 0.4, 1)
+
+[node name="StatusLabel" type="Label" parent="UI"]
+offset_left = 220.0
+offset_top = 6.0
+offset_right = 800.0
+offset_bottom = 26.0
+text = "Starting..."
+theme_override_font_sizes/font_size = 12
+modulate = Color(0.85, 0.85, 0.85, 1)
+
+[node name="ObjectiveLabel" type="Label" parent="UI"]
+offset_left = 10.0
+offset_top = 28.0
+offset_right = 800.0
+offset_bottom = 46.0
+text = "Goal: Awaken belief in all villagers"
+theme_override_font_sizes/font_size = 11
+modulate = Color(0.7, 0.85, 1.0, 0.9)
+
+[node name="TickButton" type="Button" parent="UI"]
+offset_left = 10.0
+offset_top = 688.0
+offset_right = 130.0
+offset_bottom = 716.0
+text = "⏭ Tick [Space]"
+
+[node name="AutoButton" type="Button" parent="UI"]
+offset_left = 138.0
+offset_top = 688.0
+offset_right = 248.0
+offset_bottom = 716.0
+text = "Auto: OFF"
+
+[node name="SpeedLabel" type="Label" parent="UI"]
+offset_left = 256.0
+offset_top = 694.0
+offset_right = 306.0
+offset_bottom = 712.0
+text = "Speed:"
+theme_override_font_sizes/font_size = 11
+
+[node name="SpeedSlider" type="HSlider" parent="UI"]
+offset_left = 310.0
+offset_top = 694.0
+offset_right = 450.0
+offset_bottom = 710.0
+min_value = 1.0
+max_value = 10.0
+value = 3.0
+step = 1.0
+
+[node name="TabHint" type="Label" parent="UI"]
+offset_left = 10.0
+offset_top = 668.0
+offset_right = 600.0
+offset_bottom = 686.0
+text = "[Tab] Research    [Space] Tick    [A] Auto    [Ctrl+E] Export"
+theme_override_font_sizes/font_size = 10
+modulate = Color(1, 1, 1, 0.4)
+
+[node name="EventLog" type="RichTextLabel" parent="UI"]
+offset_left = 460.0
+offset_top = 50.0
+offset_right = 1050.0
+offset_bottom = 660.0
+bbcode_enabled = true
+scroll_following = true
+text = ""
+theme_override_font_sizes/normal_font_size = 11
+modulate = Color(1, 1, 1, 0.8)
+
+[node name="Legend" type="PanelContainer" parent="UI"]
+offset_left = 460.0
+offset_top = 664.0
+offset_right = 1048.0
+offset_bottom = 716.0
+
+[node name="LegendMargin" type="MarginContainer" parent="UI/Legend"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="LegendBox" type="HBoxContainer" parent="UI/Legend/LegendMargin"]
+layout_mode = 2
+
+[node name="L1" type="Label" parent="UI/Legend/LegendMargin/LegendBox"]
+text = "● Herbalist"
+modulate = Color(0.28, 0.68, 0.32, 1)
+theme_override_font_sizes/font_size = 10
+
+[node name="L2" type="Label" parent="UI/Legend/LegendMargin/LegendBox"]
+text = "  ● Blacksmith"
+modulate = Color(0.42, 0.42, 0.82, 1)
+theme_override_font_sizes/font_size = 10
+
+[node name="L3" type="Label" parent="UI/Legend/LegendMargin/LegendBox"]
+text = "  ● Elder"
+modulate = Color(0.82, 0.72, 0.22, 1)
+theme_override_font_sizes/font_size = 10
+
+[node name="L4" type="Label" parent="UI/Legend/LegendMargin/LegendBox"]
+text = "  ● Hunter"
+modulate = Color(0.72, 0.42, 0.22, 1)
+theme_override_font_sizes/font_size = 10
+
+[node name="L5" type="Label" parent="UI/Legend/LegendMargin/LegendBox"]
+text = "  ● Innkeeper"
+modulate = Color(0.85, 0.54, 0.24, 1)
+theme_override_font_sizes/font_size = 10
+
+[node name="L6" type="Label" parent="UI/Legend/LegendMargin/LegendBox"]
+text = "  ● Weaver"
+modulate = Color(0.68, 0.38, 0.72, 1)
+theme_override_font_sizes/font_size = 10
+
+[node name="L7" type="Label" parent="UI/Legend/LegendMargin/LegendBox"]
+text = "  ● Shepherd"
+modulate = Color(0.62, 0.82, 0.52, 1)
+theme_override_font_sizes/font_size = 10
+
+[node name="L8" type="Label" parent="UI/Legend/LegendMargin/LegendBox"]
+text = "  ● Farmer"
+modulate = Color(0.88, 0.68, 0.48, 1)
+theme_override_font_sizes/font_size = 10
+
+[node name="MiraclePanel" type="PanelContainer" parent="UI"]
+offset_left = 1056.0
+offset_top = 4.0
+offset_right = 1276.0
+offset_bottom = 500.0
+script = ExtResource("3")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/MiraclePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MiraclePanel/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="UI/MiraclePanel/MarginContainer/VBoxContainer"]
+text = "⚡ 神迹"
+theme_override_font_sizes/font_size = 15
+
+[node name="Description" type="Label" parent="UI/MiraclePanel/MarginContainer/VBoxContainer"]
+text = "选择施放的神迹"
+autowrap_mode = 3
+theme_override_font_sizes/font_size = 11
+
+[node name="Buttons" type="VBoxContainer" parent="UI/MiraclePanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ResearchPanel" type="PanelContainer" parent="UI"]
+offset_left = 0.0
+offset_top = 50.0
+offset_right = 455.0
+offset_bottom = 720.0
+visible = false
+script = ExtResource("4")
+
+[node name="Margin" type="MarginContainer" parent="UI/ResearchPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="UI/ResearchPanel/Margin"]
+layout_mode = 2
+
+[node name="TickLabel" type="Label" parent="UI/ResearchPanel/Margin/VBox"]
+text = "Tick: 0"
+theme_override_font_sizes/font_size = 13
+
+[node name="DriftLabel" type="Label" parent="UI/ResearchPanel/Margin/VBox"]
+text = "Avg Drift: 0.0000"
+theme_override_font_sizes/font_size = 12
+
+[node name="HopChart" type="VBoxContainer" parent="UI/ResearchPanel/Margin/VBox"]
+layout_mode = 2
+
+[node name="NarrativesHeader" type="Label" parent="UI/ResearchPanel/Margin/VBox"]
+text = "Social Narratives"
+theme_override_font_sizes/font_size = 11
+modulate = Color(0.9, 0.85, 0.5, 1)
+
+[node name="NarrativesList" type="ItemList" parent="UI/ResearchPanel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 72)
+theme_override_font_sizes/font_size = 10
+
+[node name="BeliefsHeader" type="Label" parent="UI/ResearchPanel/Margin/VBox"]
+text = "Beliefs (L4)"
+theme_override_font_sizes/font_size = 11
+modulate = Color(0.8, 0.7, 1.0, 1)
+
+[node name="BeliefsText" type="RichTextLabel" parent="UI/ResearchPanel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 80)
+bbcode_enabled = true
+text = "[i]No beliefs formed yet[/i]"
+theme_override_font_sizes/normal_font_size = 10
+
+[node name="ProceduresHeader" type="Label" parent="UI/ResearchPanel/Margin/VBox"]
+text = "Rituals (Procedural Memory)"
+theme_override_font_sizes/font_size = 11
+modulate = Color(0.5, 1.0, 0.6, 1)
+
+[node name="ProceduresText" type="RichTextLabel" parent="UI/ResearchPanel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 70)
+bbcode_enabled = true
+text = "[i]No rituals learned yet[/i]"
+theme_override_font_sizes/normal_font_size = 10
+
+[node name="TiersHeader" type="Label" parent="UI/ResearchPanel/Margin/VBox"]
+text = "Memory Tiers  E/S/P"
+theme_override_font_sizes/font_size = 11
+modulate = Color(0.6, 0.85, 1.0, 1)
+
+[node name="TiersText" type="RichTextLabel" parent="UI/ResearchPanel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 90)
+bbcode_enabled = true
+text = ""
+theme_override_font_sizes/normal_font_size = 10
+
+[node name="ExportBtn" type="Button" parent="UI/ResearchPanel/Margin/VBox"]
+text = "📥 Export Data"
+theme_override_font_sizes/font_size = 11

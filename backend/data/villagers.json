@@ -1,0 +1,114 @@
+[
+  {
+    "agent_id": "v01",
+    "name": "Elara",
+    "age": 34,
+    "occupation": "herbalist",
+    "position": [3, 4],
+    "personality": {
+      "openness": 0.85,
+      "conscientiousness": 0.60,
+      "extraversion": 0.45,
+      "agreeableness": 0.70,
+      "neuroticism": 0.55
+    }
+  },
+  {
+    "agent_id": "v02",
+    "name": "Bram",
+    "age": 52,
+    "occupation": "blacksmith",
+    "position": [7, 3],
+    "personality": {
+      "openness": 0.25,
+      "conscientiousness": 0.80,
+      "extraversion": 0.60,
+      "agreeableness": 0.30,
+      "neuroticism": 0.35
+    }
+  },
+  {
+    "agent_id": "v03",
+    "name": "Sera",
+    "age": 19,
+    "occupation": "farmer's daughter",
+    "position": [2, 7],
+    "personality": {
+      "openness": 0.70,
+      "conscientiousness": 0.40,
+      "extraversion": 0.85,
+      "agreeableness": 0.75,
+      "neuroticism": 0.80
+    }
+  },
+  {
+    "agent_id": "v04",
+    "name": "Aldric",
+    "age": 61,
+    "occupation": "village elder",
+    "position": [5, 5],
+    "personality": {
+      "openness": 0.50,
+      "conscientiousness": 0.90,
+      "extraversion": 0.70,
+      "agreeableness": 0.55,
+      "neuroticism": 0.20
+    }
+  },
+  {
+    "agent_id": "v05",
+    "name": "Mira",
+    "age": 28,
+    "occupation": "weaver",
+    "position": [8, 6],
+    "personality": {
+      "openness": 0.60,
+      "conscientiousness": 0.55,
+      "extraversion": 0.30,
+      "agreeableness": 0.80,
+      "neuroticism": 0.65
+    }
+  },
+  {
+    "agent_id": "v06",
+    "name": "Torben",
+    "age": 40,
+    "occupation": "hunter",
+    "position": [1, 2],
+    "personality": {
+      "openness": 0.35,
+      "conscientiousness": 0.65,
+      "extraversion": 0.40,
+      "agreeableness": 0.25,
+      "neuroticism": 0.50
+    }
+  },
+  {
+    "agent_id": "v07",
+    "name": "Lisel",
+    "age": 45,
+    "occupation": "innkeeper",
+    "position": [6, 2],
+    "personality": {
+      "openness": 0.55,
+      "conscientiousness": 0.50,
+      "extraversion": 0.90,
+      "agreeableness": 0.65,
+      "neuroticism": 0.40
+    }
+  },
+  {
+    "agent_id": "v08",
+    "name": "Cael",
+    "age": 23,
+    "occupation": "shepherd",
+    "position": [4, 8],
+    "personality": {
+      "openness": 0.75,
+      "conscientiousness": 0.35,
+      "extraversion": 0.50,
+      "agreeableness": 0.60,
+      "neuroticism": 0.75
+    }
+  }
+]
